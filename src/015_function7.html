@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>015_function7</title>
+	<script type="text/javascript">
+
+		//垃圾收集 方法1：标记方法  方法2 引用计数法
+		/*
+		function test () {
+			var a = 10;		//被使用
+			var b = 20;		//被使用
+		}
+		test(); //执行完毕后 a b 又被标记一次 ：没有被使用
+		*/
+
+		//块级作用域的概念
+
+		//高级程序语言java for if 块级作用域
+		//js中没有块级作用域
+		/*
+		function test() {
+			for (var i = 0; i <= 5; i++) {
+				alert(i);
+			}
+			// alert(i); //6
+		}
+		test();
+		alert(i);
+		*/
+
+		//js : ()表示执行
+		/*
+		function test() {
+			(function (){
+				for (var i = 0; i <= 5; i++) {
+					alert(i);
+				}
+			})();
+			alert(i);
+		}
+		test();
+		*/
+
+		(function () {alert('aa');})();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

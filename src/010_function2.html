@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>010_function2</title>
+	<script type="text/javascript">
+		//3种定义函数
+
+		/*
+		// 1function 语句式
+		function test1() {
+			alert('我是test1');
+		}
+		// test1();
+
+		// 2函数的直接量 ECMAscript
+		var test2 = function () {
+			alert('我是test2');
+		}
+		// test2();
+
+		// 3function 构造函数式
+		var test3 = new Function('a', 'b', 'return a+b;');
+		// alert(test3(10, 20));
+		*/
+
+		//效率对比
+		/*
+		var d1 = new Date();
+		var t1 = d1.getTime();
+		for (var i = 0; i < 100000; i++) {
+			function test1() {;};	//function 语句式
+			// var test2 = new Function();
+		}
+		var d2 = new Date();
+		var t2 = d2.getTime();
+		alert(t2-t1);
+		*/
+
+		//解析顺序问题，对于function语句式的函数 JavaScript解析器优先解释
+		/*
+		test1();
+		function test1() {
+			alert(1111);
+		}
+
+		alert(test2);  //表示变量声明了 但没有赋值
+		test2();
+		var test2 = function () {
+			alert(2222);
+		}
+		*/
+
+		//js解析顺序 4 2 3 3 5 6
+		/*
+		function f() { return 1;}  //函数1
+		alert(f()); // 4  说明第1个函数被第4个函数覆盖
+		var f = new Function('return 2;');  //函数2
+		alert(f()); //2 说明第4个函数被第2个函数覆盖
+		var f = function () {return 3;}  //函数3
+		alert(f()); //3 说明第2个函数被第3个函数覆盖
+		function f() {return 4;}  //函数4
+		alert(f()); //3 说明第4个函数被第3个函数覆盖
+		var f = new Function ('return 5;');  //函数5
+		alert(f()); //5 第3个函数被第5个函数覆盖
+		var f = function () {return 6;}  //函数6
+		alert(f()); //6 第5个函数被第6个函数覆盖
+		*/
+
+		var k = 1;
+		function t1() {
+			var k = 2;
+			// function test() {return k;}
+			var test = function () {return k;};
+			// var test = new Function('return k;');
+			alert(test());
+		}
+		t1();
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

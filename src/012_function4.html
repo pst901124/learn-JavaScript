@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>012_function4</title>
+	<script type="text/javascript">
+		//this this对象是指在运行时期基于执行环境所绑定的
+		//this总是指向调用者
+		var k = 10;
+		function test() {
+			this.k = 20;
+		}
+		// window.test();
+		test();
+		// alert(test.k);  //undefined
+		alert(window.k);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

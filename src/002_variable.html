@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>002_variable</title>
+	<script>
+	//关于全局变量和局部变量的说明
+	/*
+		var a = 4 ; //number  全局变量
+		//变量一共两种: 全局变量 局部变量
+		function methodName (arguments) {
+			// body...
+			var a = 2 ;	//局部变量
+				b = 5 ;	//全局变量
+			alert(a);
+		};
+		// alert(b);	// b is not defined 要先执行methodName函数
+		methodName();
+		alert(b);
+	*/
+
+		//Number类型
+		var a1 = 10 ;
+		var a2 = 10.5 ;
+		var a3 = NaN;
+		var a4 = 1/0 ;		//正无穷infinity
+		var a5 = 070 ;		//8进制 和 16进制(0xA)
+		// alert(a4);
+		// alert(a5);
+
+		/*
+		var a6 = 0.1 ;
+		var a7 = 0.2 ;
+		if (a6 + a7 == 0.3) {
+			alert('等于0.3');
+		} else {
+			alert(a6 + a7);
+		}
+		*/
+
+		var a8 = parseInt('aabbb');		//不是一个数NaN;
+		// alert(a8);
+		var a9 = parseInt('1122abs');
+		// alert(a9);
+
+
+		//undefined 数据类型 它的值只有一个:undefined 表示变量声明了没有赋值；
+		var b1;
+		// alert(b1);
+
+		//Null 空值
+		var b2 = null ;
+		// alert(b2);
+
+		//String
+		var str1 = '我是字符串1';
+		var str2 = '我是字符串2';
+
+		//Boolean
+		var flag1 = false;
+		var flag2 = true;
+
+		//引用类型
+		var arr = [1,2,3];			//数组
+		var dates = new Date();		//日期对象
+		var obj = {};				//空对象
+
+		//typeof 操作符 判断数据类型
+		var a = 10 ;
+		var b = 10.3 ;
+		var c = true ;
+		var d = 'abc' ;
+		var e = new Date() ;
+		var f = [1,2,3] ;
+		var g = NaN ;
+		var h = undefined ;
+		var i = null ;		//表示一个空对象的引用
+		alert(typeof a);
+		alert(typeof b);
+		alert(typeof c);
+		alert(typeof d);
+		alert(typeof e);
+		alert(typeof f);
+		alert(typeof g);
+		alert(typeof h);
+		alert(typeof i);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

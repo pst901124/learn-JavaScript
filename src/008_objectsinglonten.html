@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>008_objectsingloten</title>
+	<script type="text/javascript">
+		//global  全局的 终极的 兜底的对象 (不存在)
+
+		/*
+		var url = 'http://www.baid.com cn';
+		//encodeURI、encodeURIComponent
+		var str1 = encodeURI(url);	// %20(url : //这些都不会进行编码)
+		var str2 = encodeURIComponent(url);		//常用方法(任何不标准的文字都会进行编码)
+		// alert(str1);
+		// alert(str2);
+
+		//decodeURI、decodeURIComponent
+		alert(decodeURI(str1));
+		alert(decodeURIComponent(str2));
+		*/
+
+		/*
+		// eval 方法 无形的JavaScript解析器
+		// var str1 = 'var a = 10; b = 20;';
+		// eval(str1);
+		// alert(a + b);
+
+		//数组字符串，直接eval(stringarr);
+
+		//{name:'zs', age:20}
+		var strobj = "{name:'zs', age:20}";
+		var obj = eval('('+strobj+')');
+		alert(obj.name);
+		*/
+
+		// parseInt parseFloat
+		/*
+		var num1 = parseInt('20');
+		var num2 = parseFloat('20.4');
+		alert(num1 + '和' + num2);
+		alert(typeof num1);
+		alert(typeof num2);
+		*/
+
+		//escape unescape URI
+		/*
+		var str1 = '雪花';
+		var str2 = escape(str1);
+		alert(str2);
+		var str3 = unescape(str2);
+		alert(str3);
+		*/
+
+		//isNaN 判断一个数是不是 不是一个数(number类型)
+		/*
+		var num1 = 10;
+		var num2 = 'abc10';
+		var num3 = '10e2';		//科学计数法 number类型
+		alert(isNaN(num1));
+		alert(isNaN(num2));
+		alert(isNaN(num3));
+
+		//在js里面，只有NaN 自己不等于自己本身
+		if (NaN == NaN) {
+			alert('相等');
+		} else {
+			alert('不等');
+		}
+		*/
+
+		//Date 日期类型
+		var date = new Date();
+		var year = date.getFullYear();
+		var month = date.getMonth() + 1;
+		var da = date.getDate();
+		var day = date.getDay();
+
+		var hours = date.getHours();
+		var seconds = date.getSeconds();
+		var minutes = date.getMinutes();
+		console.info(year + '年' + month + '月' + da + '日' + hours +':'+ minutes + ':' + seconds + '星期: ' + day);
+
+		document.write('\n' + date.getTime());
+	</script>
+</head>
+<body>
+
+</body>
+</html>

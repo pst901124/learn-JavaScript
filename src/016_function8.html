@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>016_function8</title>
+	<script type="text/javascript">
+
+		/*
+		var name = 'xiao a';
+		var obj = {
+			name : 'xiao b',
+			getName : function() {
+				return function() {
+					return this.name;
+				}
+			}
+		};
+		// alert(obj.getName()());
+		var k = obj.getName();	//全局作用域
+		alert(typeof k);	//function
+		alert(k());
+		*/
+
+		/*
+		var name = 'xiao a';
+		var obj = {
+			name : 'xiao b',
+			getName : function () {
+				//this 总是指向调用者
+				var o = this;
+				return function (){
+					return o.name;
+				}
+			}
+		};
+
+		// alert(obj.getName()());
+		var k = obj.getName();
+		alert(k());
+		*/
+
+		//闭包，一个函数可以访问另一个函数作用域内的变量
+		//封闭性 ：private 起到一个保护变量的作用
+
+		//1级作用域
+		function f (x) { //2
+			var temp = x;	//局部变量   //temp已经没有被使用
+			return function (x) {//3(function 又有了一个执行域 variable obj)
+				temp +=	x;	//temp又被使用了
+				alert(temp);
+			}
+		}
+		var a = f(50);
+		// alert(a);
+		a(5);
+		// a(10);
+		// a(20);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

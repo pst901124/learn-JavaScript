@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>009_function1</title>
+	<script type="text/javascript">
+		//简单的一个函数，function关键字 + 函数名字 没有返回值类型；
+
+		//参数列表相当于函数入口，return 相当于函数出口
+		/*
+		function test(a, b) {
+			// alert(a+b);
+			return a+b;
+		}
+		var c = test(10, 20);
+		alert(c);
+		alert(typeof test);
+		*/
+
+		function test1(aa) {
+			aa();
+		}
+
+		function test2() {
+			alert('我执行了');
+		}
+
+		// test1(test2);
+		test1(function () { alert('我也执行了');});
+
+		//在js中函数是可以嵌套定义的(尽量不要这样定义)
+		function test3() {
+			function test4() {
+				alert('我是test4');
+			}
+			// test4();
+			return test4();
+		}
+
+		test3();
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>007_objtest2</title>
+	<script type="text/javascript">
+		var arr = [1,2,1,4,2,22,41,3,2,4,5,26,7,4,8,4,8,43,2,65,8];  //object
+		//js对象的特征，在js对象中 key 是永远不会重复的
+		/*
+		var obj = new Object();
+		obj.name = 'zs';
+		obj.sex = 'gl';
+		obj.age = 20;
+		alert(obj.name);
+		obj.name = 'ls';
+		alert(obj.name);
+		*/
+
+		//1 把数组转成js的对象
+		//2 把数组中的值，变成js对象的key
+		//3 把这个对象，再还原成数组
+
+
+		//把数组转成对象
+		function toObject(arr) {
+			var obj = {};  //私有对象
+			for(var i=0; i<arr.length; i++){
+				obj[arr[i]] = true;
+			}
+			return obj;
+		}
+
+		//把这个对象转成数组
+		function keys(obj) {
+			var arr = [];  //私有对象
+			for(var attr in obj) {
+				if(obj.hasOwnProperty(attr)) {
+					arr.push(attr);
+				}
+			}
+				return arr;
+		}
+
+		//综合方法 去掉数组中重复项
+		function uniq(newarr) {
+			return keys(toObject(newarr));
+		}
+
+		alert(uniq(arr));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

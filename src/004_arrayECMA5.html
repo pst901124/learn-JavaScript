@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>004_arrayECMA5</title>
+	<script>
+		var arr = [1,2,3,4,5,4,3,2,1];
+		//新增位置方法：indexOf lastIndexOf
+
+		//1个参数的时候表示传值，返回索引位置(index从0开始)
+		// var index = arr.indexOf(4);
+		//2个参数的时候，第一个参数表示起始位置,第二个参数还是值
+		// var index = arr.indexOf(4,4);
+		// alert(index);
+		//他们查找数组比较的时候是"==="
+
+		//lastIndexOf	//从后往前找
+		// var index = arr.lastIndexOf(2);
+		// alert(index);
+
+
+		//5个新加的迭代方法
+		// every:对数组每一个元素进行一个函数的运行，如果都返回true 最后返回true 如果有一个返回false，最后则返回false；
+		// var result = arr.every(function (item, index, array){
+		// 	return item > 0;
+		// });
+		// alert(result);	//true;
+
+		// filter:对数组每一个元素进行一个函数(给定的函数)的运行，把过滤后的结果返回
+		// var result = arr.filter(function (item, index, array) {
+		// 	return item > 3;
+		// });
+		// alert(result);	//4,5,4
+
+		// forEach:循环数组每一项的值，并执行一个方法；
+		// var result = arr.forEach(function (item, index, array) {
+			// console.log(item);
+			// alert(item);
+		// });
+
+		// map:对于数组的每一个元素进行一个函数的运行，经过函数执行完后 返回新的结果；
+		// var result = arr.map(function (item, index, array) {
+		// 	return item*2;
+		// });
+		// alert(result);
+
+		// some:对数组的每一个元素进行一个函数的运行，如果有一项返回true则返回true 只有都返回false才返回false
+		// var result = arr.some(function (item, index, array) {
+			// return item > 4;
+			// return item < 0;
+		// });
+		// alert(result);
+
+		//reduce reduceRight
+		//遍历的起始位置不同
+		//prev前一个值；cur:当前值；index:索引位置；array:当前数组
+		/*
+		var result = arr.reduce(function (prev, cur, index, array) {
+			return prev + cur;
+
+		});
+		alert(result);
+		*/
+
+		var result = arr.reduceRight(function (prev, cur, index, array) {
+			return prev + cur;
+		});
+		alert(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

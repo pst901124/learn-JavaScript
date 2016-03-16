@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>011_function3</title>
+	<script type="text/javascript">
+		//function 参数
+
+		//形参列表
+
+		//js中 函数的参数：形参 实参
+		/*
+		function test(a, b) {
+			// alert(test.length); //4
+
+			//函数的实际参数 内部就是用一个数组去接受函数的实际参数
+			//arguments 对象 可以访问函数的实际参数
+			//arguments 对象 只能在函数的内部访问和使用
+			// alert(arguments.length);
+			// alert(arguments[0]);	//第一个实参
+			// alert(arguments[1]);	//第二个实参
+
+
+			//test.length 相当于 arguments.callee.length
+			if (test.length == arguments.length) {
+				return a + b;
+			} else {
+				return '参数不正确';
+			}
+
+			//arguments对象 用的最多的还是递归操作
+			//arguments.callee
+
+		}
+
+		// alert(test(10, 20));
+		alert(test(10, 20));
+		*/
+
+
+		function fact(num) {
+			if (num <= 1) {
+				return 1;
+			} else {
+				return num*arguments.callee(num-1);
+			}
+		}
+		// alert(fact(3));
+		var F = fact;
+		fact = null;
+
+		alert(F(5));
+	</script>
+</head>
+<body>
+
+</body>
+</html>
